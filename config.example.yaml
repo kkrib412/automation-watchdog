@@ -1,0 +1,53 @@
+# Automation Watchdog Configuration
+
+# n8n instance settings
+n8n:
+  base_url: "http://localhost:5678"
+  api_key: "your_n8n_api_key_here"
+  lookback_minutes: 15
+  poll_interval: 60
+
+# Alert settings
+alerts:
+  on_failure: true
+  on_timeout: true
+  on_anomaly: true
+  cooldown_seconds: 300
+
+# Webhook alerts (Slack, Discord, custom)
+webhook:
+  enabled: true
+  url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+  message: |
+    🚨 **Automation Watchdog Alert**
+    Workflow: {workflow_name}
+    Status: {status}
+    Error: {error}
+    Time: {timestamp}
+    View execution: {execution_url}
+
+# Email alerts (SMTP)
+email:
+  enabled: false
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  username: "your_email_username"
+  password: "your_email_password"
+  from: "watchdog_at_yourdomain.com"
+  to: "alerts_at_yourdomain.com"
+
+# Health scoring
+health:
+  failure_rate_threshold: 10
+  slow_execution_multiplier: 3
+  sample_size: 50
+
+# Storage
+storage:
+  db_path: "watchdog.db"
+  retention_days: 30
+
+# Logging
+logging:
+  level: "INFO"
+  file: "watchdog.log"
