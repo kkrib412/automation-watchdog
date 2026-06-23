@@ -4,6 +4,8 @@ Real-time health monitoring for AI automation workflows (n8n, Make, Zapier). Det
 
 ## What it does
 
+Outcome: reduces silent automation failures for small teams by surfacing health signals before bad data propagates.
+
 Checks workflow health signals and raises alerts when pipelines degrade. Built for automation-heavy stacks where one missed run can cascade into bad data or missed actions.
 
 ## Tech stack
